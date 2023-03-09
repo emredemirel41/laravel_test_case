@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
+class AuthorBookSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +14,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
-        User::factory()->create([
-            'email' => 'ahsoka.tano@q.agency',
-            'password' => 'Kryze4President',
-        ]);
+        \App\Models\Author::factory(10)->create();
     }
 }
