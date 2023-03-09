@@ -16,9 +16,13 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::truncate();
+        // User::factory()->create([
+        //     'email' => 'ahsoka.tano@q.agency',
+        //     'password' => 'Kryze4President',
+        // ]);
         User::factory()->create([
             'email' => 'ahsoka.tano@q.agency',
-            'password' => 'Kryze4President',
+            'password' => bcrypt('Kryze4President'),
         ]);
     }
 }
