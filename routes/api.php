@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\AuthorController;
+use App\Http\Controllers\Api\BookController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +20,6 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function() {
-   
+    Route::resource('authors', AuthorController::class);
+    Route::resource('books', BookController::class);
 });
