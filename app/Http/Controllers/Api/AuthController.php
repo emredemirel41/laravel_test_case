@@ -30,10 +30,18 @@ class AuthController extends ApiController
             $user = Auth::user(); 
             $success['access_token'] =  $user->createToken('TestCaseApp')->plainTextToken; 
             $success['user'] =  $user;
-            return $this->successResponse($success, 'User login successfully.');
+            return $this->successResponse($success, 'User login successfully');
         } else { 
             return $this->errorResponse('Unauthorized', 401);
         } 
 
     }   
+
+    public function logout(Request $request)
+    {
+        $user = Auth::user();
+        $request->user()->tokens()->delete();
+        return $this->successResponse(null, 'Logout successfully');
+
+    }
 }

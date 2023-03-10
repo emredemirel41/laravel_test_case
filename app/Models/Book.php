@@ -15,6 +15,7 @@ class Book extends Model
         'isbn',
         'format',
         'number_of_pages',
+        'author_id',
     ];
 
     public function author()
