@@ -6,9 +6,35 @@
                 <hr>
                 <form action="">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Title</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label class="form-label">Title</label>
+                        <input type="email" class="form-control" >
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <input type="email" class="form-control" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ISBN</label>
+                        <input type="email" class="form-control" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Format</label>
+                        <input type="email" class="form-control" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Number of Pages</label>
+                        <input type="email" class="form-control" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Release Date</label>
+                        <input type="email" class="form-control" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Author</label>
+                        <input type="email" class="form-control" >
+                    </div>
+
+                    <button class="btn btn-block btn-success">Add New Book</button>
                 </form>
             </div>
         </div>

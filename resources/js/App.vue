@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg bg-dark " data-bs-theme="dark"  id="nav">
+    <nav class="navbar navbar-expand-lg bg-dark " data-bs-theme="dark" id="nav">
         <div class="container-fluid">
             <router-link class="navbar-brand" to="/">CaseStudy</router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -15,13 +15,40 @@
                         <router-link class="nav-link" to="/addbook">Add Book</router-link>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <li class="nav-item">
-                       <a href=""></a>
-                    </li>
-                    <router-link class="btn btn-outline-success" to="/">Login</router-link>
-                </form>
+                <div class="d-flex">
+                    <div v-if="getToken != ''">
+                        <router-link to="/" class="mt-2" style="margin-right: 10px;">{{getUserName}}</router-link>
+                        <button @click="setLogout" class="btn btn-outline-danger">Logout</button>
+                    </div>
+                    <div v-else>
+                        <router-link class="btn btn-outline-danger" to="/">Login</router-link>
+                    </div>
+
+                </div>
             </div>
         </div>
     </nav>
-<router-view /></template>
+    <router-view />
+</template>
+
+<script>
+
+import axios from "axios";
+import { mapGetters, mapActions } from "vuex";
+export default {
+    computed: {
+        ...mapGetters([
+            'getToken','getUserName',
+        ]
+        ),
+    },
+    methods : {
+        ...mapActions([
+        'initAuth','setLogout',
+        ]),
+    },
+    created() {
+        this.initAuth();
+    }, 
+}
+</script>

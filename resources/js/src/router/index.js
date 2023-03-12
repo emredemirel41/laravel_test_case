@@ -13,11 +13,19 @@ const routes = [
     path: "/authors",
     name: "Authors",
     component: Authors,
+    beforeEnter: (to, from) => {
+      // reject the navigation
+      return localStorage.getItem("token") ? true : false;
+    },
   },
   {
     path: "/addbook",
     name: "AddBook",
     component: AddBook,
+    beforeEnter: (to, from) => {
+      // reject the navigation
+      return localStorage.getItem("token") ? true : false;
+    },
   },
 ];
 
