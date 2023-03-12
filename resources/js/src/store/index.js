@@ -38,8 +38,13 @@ const store = createStore({
                 })
         },
         setLogout({ commit, state, dispatch }, payload) {
-            axios.post('/logout', {})
+            axios.post('/logout', {},{
+                headers: {
+                    'Authorization': `Bearer ${state.token}`
+                }
+            })
                 .then(response => {
+                    console.log(response.data);
                     commit('setLogout');
                 })
                 .catch(e => {

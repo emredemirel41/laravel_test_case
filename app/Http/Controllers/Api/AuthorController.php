@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\AuthorResource;
 use App\Models\Author;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class AuthorController extends ApiController
     public function index()
     {
         $data = Author::all();
-        return $this->successResponse($data, 'Authors List');
+        return $this->successResponse(AuthorResource::collection($data), 'Authors List');
     }
 
     /**
