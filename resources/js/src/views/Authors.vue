@@ -47,8 +47,6 @@ export default {
     data() {
         return {
             authors: [
-                { message: 'Foo' },
-                { message: 'Bar' }
             ],
         }
     },

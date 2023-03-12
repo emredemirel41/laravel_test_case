@@ -44,14 +44,12 @@ const store = createStore({
                 }
             })
                 .then(response => {
-                    console.log(response.data);
                     commit('setLogout');
                 })
                 .catch(e => {
                     alert(e.response.data.message);
                 })
         }
-
     },
     mutations: {
         setLogin(state, payload) {
