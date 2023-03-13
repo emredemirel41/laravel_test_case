@@ -72,7 +72,7 @@ You can create a random author with the number of books you defined, For this, y
   POST /api/login
 ```
 
-| Parametre | Type     | Description                |
+| Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `email` | `string` | **Required**. your email. |
 | `password` | `string` | **Required**. your password. |
@@ -84,7 +84,7 @@ You can create a random author with the number of books you defined, For this, y
   POST /api/logout
 ```
 
-| Parametre | Type     | Description                |
+| Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `Authorization` | `string` | **Required**. your access_token. |
 
@@ -112,7 +112,7 @@ You can create a random author with the number of books you defined, For this, y
   POST /api/books/
 ```
 
-| Parametre | Type     | Description                |
+| Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `title` | `string` | **Required**. book title. |
 | `release_date` | `string` | **Required**. book release date. |
